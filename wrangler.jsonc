@@ -1,0 +1,10 @@
+{
+  // Cloudflare Worker config — enables git-connected auto-deploys (Workers Builds).
+  // Deploy command on Cloudflare's side: npx wrangler deploy
+  // Do not edit unless you are Nick.
+  "name": "hook-house",
+  "compatibility_date": "2026-07-12",
+  "assets": {
+    "directory": "./"
+  }
+}

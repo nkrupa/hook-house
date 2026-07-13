@@ -1,0 +1,185 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Hook House Kitchen — Coming Soon to Aransas Pass</title>
+<meta name="description" content="Hook House Kitchen. Fresh Gulf seafood, real steaks, and cook-your-catch. Canalside in City-by-the-Sea, Aransas Pass, Texas. Opening soon — join the list.">
+
+<meta property="og:title" content="Hook House Kitchen — Coming Soon">
+<meta property="og:description" content="Fresh Gulf seafood and real steaks. Canalside in City-by-the-Sea. Join the list.">
+<meta property="og:image" content="https://hookhousekitchen.com/assets/coming-soon-banner.png">
+<meta property="og:url" content="https://hookhousekitchen.com/">
+<meta property="og:type" content="website">
+<meta name="twitter:card" content="summary_large_image">
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+<link rel="canonical" href="https://hookhousekitchen.com/">
+<link rel="icon" href="assets/hook-house-logo.png">
+<link rel="stylesheet" href="styles.css?v=2">
+</head>
+<body>
+
+<main class="wrap">
+
+  <header class="hero">
+    <img class="logo" src="assets/hook-house-logo.png"
+         alt="Hook House Kitchen" width="900" height="808">
+
+    <p class="eyebrow">Aransas Pass, Texas</p>
+
+    <h1>Coming soon.</h1>
+
+    <p class="lede">Fresh Gulf seafood and real steaks. Canalside in City-by-the-Sea.</p>
+    <p class="kicker">We&rsquo;re getting the kitchen ready.</p>
+  </header>
+
+  <section class="promises" aria-label="What to expect">
+    <div class="promise">
+      <h2>Gulf fish, by name</h2>
+      <p>Red drum, black drum, snapper, mahi, tuna. Whatever the boats bring in.</p>
+    </div>
+    <div class="promise">
+      <h2>Bring your catch</h2>
+      <p>You caught it, we&rsquo;ll cook it. Grilled, blackened, or fried, with the sides you want.</p>
+    </div>
+    <div class="promise">
+      <h2>A proper bar</h2>
+      <p>Cocktails mixed from scratch, cold beer, and a margarita to drive for.</p>
+    </div>
+  </section>
+
+  <p class="social-line">
+    <a class="social" href="https://www.instagram.com/hookhousekitchen/" target="_blank" rel="noopener">@hookhousekitchen</a>
+    <span class="social-note">Follow along for opening news.</span>
+  </p>
+
+  <section class="signup" aria-labelledby="signup-heading">
+    <h2 id="signup-heading">Join the list</h2>
+    <p class="signup-note">We&rsquo;ll let you know the day we open. Nothing else.</p>
+
+    <!-- Mailchimp embedded form. Posts to the Hook House audience (id 30fd5951ad). -->
+    <form
+      action="https://turfnsurfpoboy.us4.list-manage.com/subscribe/post?u=7c47feff317e3606b6eb33c2a&amp;id=30fd5951ad&amp;f_id=0029bae1f0"
+      method="post"
+      id="mc-embedded-subscribe-form"
+      name="mc-embedded-subscribe-form"
+      class="mc-form"
+      target="_blank">
+
+      <label class="sr-only" for="mce-EMAIL">Email address</label>
+      <input type="email" name="EMAIL" id="mce-EMAIL" class="email-input"
+             placeholder="you@email.com" autocomplete="email" required>
+
+      <!-- Anti-bot field. Leave this exactly as is. -->
+      <div aria-hidden="true" style="position:absolute; left:-5000px;">
+        <input type="text" name="b_7c47feff317e3606b6eb33c2a_30fd5951ad" tabindex="-1" value="">
+      </div>
+
+      <button type="submit" name="subscribe" id="mc-embedded-subscribe" class="submit-btn">
+        Notify me
+      </button>
+    </form>
+
+    <p class="form-msg" id="form-msg" role="status" aria-live="polite"></p>
+  </section>
+
+  <footer>
+    <p class="find-us">Find us</p>
+    <a class="address"
+       href="https://www.google.com/maps/search/?api=1&amp;query=210+Gulf+Gate+Rd%2C+Aransas+Pass%2C+TX+78336"
+       target="_blank" rel="noopener">
+      210 Gulf Gate Rd<br>Aransas Pass, TX 78336
+    </a>
+
+    <p class="footer-note">Hook House Kitchen &middot; Hooked since 2026</p>
+  </footer>
+
+</main>
+
+<script>
+/* Submits the email to Mailchimp in the background so nobody leaves the page.
+   Mailchimp's endpoint doesn't allow normal cross-site requests, so we use its
+   JSONP endpoint (post-json) — the long-standing way to do this from a static site.
+   If JavaScript fails for any reason, the form still submits the normal way and
+   Mailchimp's own page handles it. Nothing is lost. */
+(function () {
+  var form  = document.getElementById('mc-embedded-subscribe-form');
+  var email = document.getElementById('mce-EMAIL');
+  var btn   = document.getElementById('mc-embedded-subscribe');
+  var msg   = document.getElementById('form-msg');
+  if (!form || !email || !btn || !msg) return;
+
+  var HONEYPOT = 'b_7c47feff317e3606b6eb33c2a_30fd5951ad';
+
+  function show(text, kind) {
+    msg.textContent = text;
+    msg.className = 'form-msg is-visible ' + kind;
+  }
+
+  form.addEventListener('submit', function (e) {
+    e.preventDefault();
+
+    var value = email.value.trim();
+    if (!value || value.indexOf('@') === -1) {
+      show('That email doesn\u2019t look right.', 'is-error');
+      email.focus();
+      return;
+    }
+
+    btn.disabled = true;
+    btn.textContent = 'Sending\u2026';
+    msg.className = 'form-msg';
+
+    var cb = 'hhcb' + Date.now();
+    var url = form.action.replace('/post?', '/post-json?')
+      + '&EMAIL=' + encodeURIComponent(value)
+      + '&' + HONEYPOT + '='
+      + '&c=' + cb;
+
+    var done = false;
+    var script = document.createElement('script');
+
+    function finish(text, kind) {
+      if (done) return;
+      done = true;
+      btn.disabled = false;
+      btn.textContent = 'Notify me';
+      show(text, kind);
+      try { delete window[cb]; } catch (err) { window[cb] = undefined; }
+      if (script.parentNode) script.parentNode.removeChild(script);
+    }
+
+    window[cb] = function (data) {
+      if (data && data.result === 'success') {
+        form.style.display = 'none';
+        finish('You\u2019re on the list. We\u2019ll be in touch.', 'is-success');
+        return;
+      }
+      var raw = (data && data.msg) ? String(data.msg) : '';
+      var clean = raw.replace(/<[^>]*>/g, '');
+      if (/already subscribed/i.test(clean)) {
+        form.style.display = 'none';
+        finish('You\u2019re already on the list. Sit tight.', 'is-success');
+      } else {
+        finish(clean || 'Something went wrong. Try again in a minute.', 'is-error');
+      }
+    };
+
+    script.src = url;
+    script.onerror = function () {
+      finish('Couldn\u2019t reach the server. Try again in a minute.', 'is-error');
+    };
+    document.body.appendChild(script);
+
+    setTimeout(function () {
+      finish('That took too long. Try again in a minute.', 'is-error');
+    }, 10000);
+  });
+})();
+</script>
+
+</body>
+</html>
